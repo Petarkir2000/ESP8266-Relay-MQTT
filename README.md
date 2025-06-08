@@ -80,6 +80,9 @@ Address---Size----Field----------Description
 
 80---------32------mqtt_pass-----Password
 
+## Chart/Diagram:
+For more information on the modules and the sequence of implementation see `Diagram.png'
+
 
 ## License
 
