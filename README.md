@@ -52,7 +52,7 @@ This project implements a smart relay controller using an ESP8266, featuring MQT
      - `EEPROM`
 
 2. **Upload Code**:
-   - Compile and upload `esp8266_relay_mqtt_restart_LAST_ver3.3_with_comments.ino` to your ESP8266.
+   - Compile and upload `esp8266_relay_mqtt_ver3_3_comments_ENG.ino` to your ESP8266.
 
 3. **Hardware Connection**:
    - Connect the relay to pin `D1` (GPIO5).
