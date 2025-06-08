@@ -1,0 +1,19 @@
+flowchart TD
+    A[Start] --> B[Initialize Serial & Relay]
+    B --> C[Load EEPROM Settings]
+    C --> D{WiFi Connected?}
+    D -->|No| E[Start WiFiManager AP]
+    E --> F[User Configures WiFi/MQTT]
+    F --> G[Save to EEPROM]
+    D -->|Yes| G
+    G --> H[Connect to MQTT]
+    H --> I{MQTT Connected?}
+    I -->|No| J[Retry or Restart]
+    I -->|Yes| K[Subscribe to Control Topic]
+    K --> L[Start Web Server]
+    L --> M[Main Loop]
+    M --> N[Handle MQTT Messages]
+    M --> O[Publish Heartbeat]
+    M --> P[Check WiFi]
+    P -->|Disconnected| Q[Reconnect WiFi]
+    P -->|Connected| M
