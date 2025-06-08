@@ -63,7 +63,7 @@ This project implements a smart relay controller using an ESP8266, featuring MQT
 - **Web Interface**: Access via `http://<ESP_IP>` to control the relay and view status.
 - **MQTT Commands**: Publish to `home/relay/control` with payload `ON`/`OFF`/`RESTART`.
 - **Auto-Reconnect**: The device automatically reconnects to WiFi/MQTT if the connection is lost.
-- **Home Assistant Configuration**: In accordance with attached Configuration.yaml file
+- **Home Assistant Configuration**: In accordance with attached `Configuration.yaml` file
   
 ## Troubleshooting
 
