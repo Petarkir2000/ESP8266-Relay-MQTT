@@ -1,0 +1,76 @@
+mqtt:
+  switch:
+    - name: "ESP_Relay4"
+      unique_id: "esp_relay_4_switch"
+      state_topic: "home/relay/status"
+      command_topic: "home/relay/control"
+      availability:
+        - topic: "home/relay/online"
+          payload_available: "ONLINE"
+          payload_not_available: "OFFLINE"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: true
+      device:
+        name: "ESP Relay 4"
+        identifiers: "esp_relay_4"
+        manufacturer: "DIY"
+        model: "ESP8266 Relay"
+        sw_version: "3.3"
+  
+  sensor:
+    - name: "ESP_Relay 4 Diagnostics"
+      state_topic: "home/relay/diagnostics"
+      value_template: "{{ value_json.state }}"
+      json_attributes_topic: "home/relay/diagnostics"
+      availability_topic: "home/relay/online"
+      payload_available: "ONLINE"
+      payload_not_available: "OFFLINE"
+      qos: 0
+      device:
+        identifiers: "esp_relay_4"
+      
+    - name: "ESP_Relay 4 RSSI"
+      unique_id: "esp_relay_4_rssi"
+      state_topic: "home/relay/diagnostics"
+      value_template: "{{ value_json.rssi }}"
+      unit_of_measurement: "dBm"
+      availability_topic: "home/relay/online"
+      payload_available: "ONLINE"
+      payload_not_available: "OFFLINE"
+      qos: 0
+      device_class: "signal_strength"
+      device:
+        identifiers: "esp_relay_4"
+      
+    - name: "ESP_Relay 4 Free Heap"
+      unique_id: "esp_relay_4_heap"
+      state_topic: "home/relay/diagnostics"
+      value_template: "{{ value_json.heap }}"
+      unit_of_measurement: "bytes"
+      availability_topic: "home/relay/online"
+      payload_available: "ONLINE"
+      payload_not_available: "OFFLINE"
+      qos: 0
+      icon: "mdi:memory"
+      device:
+        identifiers: "esp_relay_4"
+
+  binary_sensor:
+    - name: "ESP_Relay 4 Online Status"
+      unique_id: "esp_relay_4_online"
+      state_topic: "home/relay/online"
+      payload_on: "ONLINE"
+      payload_off: "OFFLINE"
+      availability_topic: "home/relay/online"
+      payload_available: "ONLINE"
+      payload_not_available: "OFFLINE"
+      device_class: "connectivity"
+      qos: 0
+      device:
+        identifiers: "esp_relay_4"
+      
