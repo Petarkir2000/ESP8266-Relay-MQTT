@@ -71,10 +71,13 @@ This project implements a smart relay controller using an ESP8266, featuring MQT
 - **MQTT Issues**: Verify server IP, credentials, and firewall settings.
 
 ## EEPROM Memory Map:
-Address Size 	Field 		Description
-0	40	mqtt_server	IP или хост на MQTT брокера
-40	40	mqtt_user	Потребител за MQTT
-80	32	mqtt_pass	Парола
+Address---Size----Field----------Description
+
+0----------40------mqtt_server---IP or host of the MQTT broker
+
+40---------40------mqtt_user-----User for MQTT
+
+80---------32------mqtt_pass-----Password
 
 
 ## License
